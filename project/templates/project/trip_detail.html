@@ -1,0 +1,18 @@
+{% block content %}
+    <h2>Trip Detail</h2>
+    {{ object }}
+
+    <h2>Messages</h2>
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Add a Message</h2>
+    <form action="{% url 'message_create' %}" method="post">
+        {% csrf_token %}
+        {{ message_form.as_p }}
+        <button>Submit</button>
+    </form>
+{% endblock content %}

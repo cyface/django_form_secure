@@ -1,0 +1,6 @@
+{% block content %}
+    <h2>Trip List</h2>
+    {% for trip in object_list %}
+        <a href="{% url 'trip_detail' trip.pk %}">{{ trip }}</a>
+    {% endfor %}
+{% endblock content %}
