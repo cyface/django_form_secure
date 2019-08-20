@@ -35,3 +35,4 @@ class MessageCreateView(CreateView):
 
     def get_success_url(self):
         return reverse_lazy("trip_detail", args={self.object.trip_id})
+        # @TODO: If you want to use this from elsewhere, you will need to pass in something so it knows where to go
